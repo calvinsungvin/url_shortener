@@ -11,17 +11,15 @@
         <tr>
             <th>Full URL</th>
             <th>Short URL</th>
-            <th>Clicks</th>
         </tr>
     </thead>
     <tbody>
-       
+       {{#each shortUrls}}
         <tr>
-            <td><a href="{{shortUrls.full}}">{{shortUrls.full}}</a></td>
-            <td><a href="{{shortUrls.short}}">{{shortUrls.short}}</a></td>
-            <td>{{shortUrls.clicks}}</td>
+            <td><a href="{{this.full}}">{{this.full}}</a></td>
+            <td><a href="{{this.short}}">{{this.short}}</a></td>
         </tr>
-      
+      {{/each}}
     </tbody>
 </table>
 </div>

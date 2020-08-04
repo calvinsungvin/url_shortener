@@ -1,4 +1,4 @@
-function makeid(length) {
+function makeId(length) {
     var result           = ''
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     var charactersLength = characters.length
@@ -7,4 +7,6 @@ function makeid(length) {
     }
     return result
  }
+
+ module.exports = makeId
   
