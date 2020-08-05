@@ -25,9 +25,10 @@ app.get('/', async (req, res) => {
 
 app.post('/shortUrls', async (req, res) => {
     const { fullUrl } = req.body
+    const findAllFullUrls = ShortUrl.find()
     if (fullUrl){
-        const exists = ShortUrl.some(
-            url => ShortUrl.full === fullUrl
+        const exists = findAllFullUrls.some(
+            url => findAllFullUrls.full === fullUrl
         )
         if (!exists){
             await ShortUrl.create({
@@ -38,8 +39,6 @@ app.post('/shortUrls', async (req, res) => {
     } 
     res.redirect('/')
 })
-
-
 
 
 app.get('/:shortUrl', async (req, res) => {
