@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 3000
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const makeId = require('./random')
@@ -48,6 +48,6 @@ app.get('/:shortUrl', async (req, res) => {
 })
 
 // start and listen on the Express server
-app.listen(port, () => {
-    console.log(`Express is listening on localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`Express is listening on localhost:${PORT}`)
 })
